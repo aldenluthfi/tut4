@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://scenes/Spawner.gd" id="5_qvcld"]
 [ext_resource type="PackedScene" uid="uid://cjfaf6k5h7udj" path="res://scenes/Enemy.tscn" id="6_rom4y"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ex56"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjq6m"]
 texture = ExtResource("2_yrabu")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
@@ -50,7 +50,7 @@ texture_region_size = Vector2i(128, 128)
 [sub_resource type="TileSet" id="TileSet_g0x76"]
 tile_size = Vector2i(128, 128)
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_4ex56")
+sources/0 = SubResource("TileSetAtlasSource_vjq6m")
 
 [node name="Level1" type="Node2D"]
 
@@ -70,7 +70,7 @@ texture = ExtResource("3_lbt7v")
 
 [node name="TriggerArea" parent="Sprite2D" instance=ExtResource("4_6gdai")]
 scale = Vector2(51, 51)
-sceneName = "WinScreen"
+sceneName = "Level2"
 
 [node name="TriggerArea" parent="." instance=ExtResource("4_6gdai")]
 position = Vector2(0, 1000)
