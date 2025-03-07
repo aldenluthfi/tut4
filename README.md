@@ -22,3 +22,6 @@ Setelah goal area ditambahkan, langkah selanjutnya adalah menambahkan area reset
 5. Menambahkan Enemy sebagai obstacle
 
 Setelah area reset ditambahkan, langkah selanjutnya adalah menambahkan enemy sebagai obstacle. Enemy ini berupa object yang bergerak secara acak. Enemy ini memiliki collider yang memungkinkan player untuk berinteraksi dengan enemy. Enemy ini juga memiliki script yang memungkinkan enemy untuk jatuh secara acak.
+
+6. Polishing
+Salah satu polishing yang dilakukan adalah untuk menambahkan hotkey untuk mereset level
