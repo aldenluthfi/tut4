@@ -1,6 +1,56 @@
-[gd_scene load_steps=2 format=3 uid="uid://yqmk0vpvnyxr"]
+[gd_scene load_steps=9 format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="2_yrabu"]
+[ext_resource type="Texture2D" uid="uid://bbale34yqctf4" path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_land.png" id="3_lbt7v"]
+[ext_resource type="PackedScene" uid="uid://dqr2f0sfvaott" path="res://scenes/TriggerArea.tscn" id="4_6gdai"]
+[ext_resource type="Script" path="res://scenes/Spawner.gd" id="5_qvcld"]
+[ext_resource type="PackedScene" uid="uid://cjfaf6k5h7udj" path="res://scenes/Enemy.tscn" id="6_rom4y"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4ex56"]
+texture = ExtResource("2_yrabu")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, 13.25, 57.5, -31.75, 37.5, -59.75, 5.5)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 54.75, 15, 19.75, 44, -22.75, 57.5, -64, 64)
+5:0/0 = 0
+5:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, -22.5)
+6:0/0 = 0
+6:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, -19, -64, 64)
+7:0/0 = 0
+7:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64, -64, -64)
+8:0/0 = 0
+8:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64, -64, -64)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 9, -64, 9, -64, -64)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 9, -64, 9, -64, -64)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 9, -64, 9, -64, -64)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 9, -64, 9, -64, -64)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, 64, -64, 64)
+5:1/0 = 0
+5:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64)
+6:1/0 = 0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64, -64, -64)
+7:1/0 = 0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64, -64, -64)
+8:1/0 = 0
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(64, -64, 64, 64, -64, 64, -64, -64)
+
+[sub_resource type="TileSet" id="TileSet_g0x76"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4ex56")
 
 [node name="Level1" type="Node2D"]
 
@@ -8,3 +58,26 @@
 position = Vector2(445, 209)
 collision_layer = 3
 collision_mask = 3
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAAIAAAAAAAAAAAAEAAIAAAAAAAAAAAAFAAIAAAAEAAEAAAAFAAMAAAAHAAAAAAAGAAMAAAAAAAAAAAAHAAMAAAAAAAAAAAAIAAMAAAAAAAAAAAALAAMAAAAEAAAAAAAKAAMAAAADAAAAAAACAAIAAAADAAAAAAAEAAMAAAACAAAAAAA=")
+tile_set = SubResource("TileSet_g0x76")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(1411, 304)
+scale = Vector2(0.186035, 0.156738)
+texture = ExtResource("3_lbt7v")
+
+[node name="TriggerArea" parent="Sprite2D" instance=ExtResource("4_6gdai")]
+scale = Vector2(51, 51)
+sceneName = "WinScreen"
+
+[node name="TriggerArea" parent="." instance=ExtResource("4_6gdai")]
+position = Vector2(0, 1000)
+scale = Vector2(500, 40)
+sceneName = "Level1"
+
+[node name="Spawner" type="Node2D" parent="."]
+position = Vector2(1222, -24)
+script = ExtResource("5_qvcld")
+obstacle = ExtResource("6_rom4y")

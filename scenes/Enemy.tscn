@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cjfaf6k5h7udj"]
+
+[ext_resource type="PackedScene" uid="uid://dqr2f0sfvaott" path="res://scenes/TriggerArea.tscn" id="2_3dewt"]
+[ext_resource type="Texture2D" uid="uid://bivk5n8i3vnqc" path="res://assets/kenney_platformerpack/PNG/Enemies/fishBlue.png" id="2_fhcfu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6c26"]
+size = Vector2(38, 50)
+
+[node name="Enemy" type="RigidBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 3.14159
+scale = Vector2(0.453125, 0.453125)
+texture = ExtResource("2_fhcfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m6c26")
+
+[node name="TriggerArea" parent="." instance=ExtResource("2_3dewt")]
+scale = Vector2(1.91, 2.5)
+sceneName = "LoseScreen"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
