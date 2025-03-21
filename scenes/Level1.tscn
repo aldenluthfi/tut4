@@ -1,11 +1,14 @@
-[gd_scene load_steps=9 format=4 uid="uid://yqmk0vpvnyxr"]
+[gd_scene load_steps=12 format=4 uid="uid://yqmk0vpvnyxr"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="Texture2D" uid="uid://76hi8rt1miuo" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_grass.png" id="2_yrabu"]
 [ext_resource type="Texture2D" uid="uid://bbale34yqctf4" path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_land.png" id="3_lbt7v"]
 [ext_resource type="PackedScene" uid="uid://dqr2f0sfvaott" path="res://scenes/TriggerArea.tscn" id="4_6gdai"]
 [ext_resource type="Script" path="res://scenes/Spawner.gd" id="5_qvcld"]
+[ext_resource type="Script" path="res://scenes/SceneSwitcher.gd" id="6_3f4xi"]
 [ext_resource type="PackedScene" uid="uid://cjfaf6k5h7udj" path="res://scenes/Enemy.tscn" id="6_rom4y"]
+[ext_resource type="PackedScene" uid="uid://bpwo8sypg80fw" path="res://scenes/LifeCounter.tscn" id="7_sdgr3"]
+[ext_resource type="PackedScene" uid="uid://c0fofab1dp1ke" path="res://scenes/SceneSwitcher.tscn" id="8_25enw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vjq6m"]
 texture = ExtResource("2_yrabu")
@@ -68,9 +71,12 @@ position = Vector2(1411, 304)
 scale = Vector2(0.186035, 0.156738)
 texture = ExtResource("3_lbt7v")
 
-[node name="TriggerArea" parent="Sprite2D" instance=ExtResource("4_6gdai")]
+[node name="Win" parent="Sprite2D" instance=ExtResource("4_6gdai")]
 scale = Vector2(51, 51)
 sceneName = "Level2"
+
+[node name="SceneSwitcher" parent="Sprite2D/Win" instance=ExtResource("8_25enw")]
+script = ExtResource("6_3f4xi")
 
 [node name="TriggerArea" parent="." instance=ExtResource("4_6gdai")]
 position = Vector2(0, 1000)
@@ -81,3 +87,7 @@ sceneName = "Level1"
 position = Vector2(1222, -24)
 script = ExtResource("5_qvcld")
 obstacle = ExtResource("6_rom4y")
+
+[node name="LifeCounter" type="CanvasLayer" parent="."]
+
+[node name="LifeCounter" parent="LifeCounter" instance=ExtResource("7_sdgr3")]

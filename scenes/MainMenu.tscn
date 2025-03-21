@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://dcwh7qed8pxtf"]
+
+[ext_resource type="Script" path="res://scenes/SelectStage.gd" id="1_haysj"]
+[ext_resource type="Script" path="res://scenes/NewGame.gd" id="1_jo3m6"]
+[ext_resource type="Texture2D" uid="uid://5yv0bn6jfwtc" path="res://assets/kenney_platformerpack/PNG/Players/Variable sizes/Pink/alienPink_stand.png" id="2_aljbo"]
+[ext_resource type="Texture2D" uid="uid://caagct4qorsvf" path="res://assets/kenney_platformerpack/PNG/Players/Variable sizes/Pink/alienPink_jump.png" id="3_jhene"]
+
+[node name="MainMenu" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "ALIEN GAME"
+
+[node name="New Game" type="LinkButton" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "New Game"
+script = ExtResource("1_jo3m6")
+scene_to_load = "Level1"
+
+[node name="Select Stage" type="LinkButton" parent="HBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Select Stage"
+script = ExtResource("1_haysj")
+scene_to_load = "SelectStage"
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("2_aljbo")
+stretch_mode = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = ExtResource("3_jhene")
+stretch_mode = 2
+
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/New Game" to="HBoxContainer/MarginContainer/VBoxContainer/New Game" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/Select Stage" to="HBoxContainer/MarginContainer/VBoxContainer/Select Stage" method="_on_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0ur7ea8wgyl0"]
+[gd_scene load_steps=3 format=3 uid="uid://d4gt5r5pbr2fk"]
 
 [ext_resource type="Texture2D" uid="uid://bi5p7hlw4wlhv" path="res://assets/dead.jpg" id="1"]
 [ext_resource type="Script" path="res://scenes/LoseScreen.gd" id="1_xev0g"]
@@ -7,6 +7,6 @@
 script = ExtResource("1_xev0g")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(512, 320)
-scale = Vector2(0.76, 0.76)
+position = Vector2(557, 341)
+scale = Vector2(0.856429, 0.76)
 texture = ExtResource("1")

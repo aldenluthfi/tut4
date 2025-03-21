@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=4 uid="uid://d15fvku0xbqds"]
+[gd_scene load_steps=11 format=4 uid="uid://d15fvku0xbqds"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_7e1dl"]
 [ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="2_c350s"]
 [ext_resource type="PackedScene" uid="uid://dqr2f0sfvaott" path="res://scenes/TriggerArea.tscn" id="3_0x7ef"]
+[ext_resource type="PackedScene" uid="uid://c0fofab1dp1ke" path="res://scenes/SceneSwitcher.tscn" id="4_cl6ro"]
 [ext_resource type="Texture2D" uid="uid://bbale34yqctf4" path="res://assets/kenney_platformerpack/PNG/Backgrounds/blue_land.png" id="4_y5qci"]
 [ext_resource type="Script" path="res://scenes/Spawner.gd" id="5_gxr1q"]
 [ext_resource type="PackedScene" uid="uid://lal426ii4nae" path="res://scenes/Bee.tscn" id="6_54og0"]
+[ext_resource type="PackedScene" uid="uid://bpwo8sypg80fw" path="res://scenes/LifeCounter.tscn" id="7_vuvba"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_obbfj"]
 texture = ExtResource("2_c350s")
@@ -66,6 +68,8 @@ position = Vector2(0, 1000)
 scale = Vector2(500, 40)
 sceneName = "Level2"
 
+[node name="SceneSwitcher" parent="TriggerArea" instance=ExtResource("4_cl6ro")]
+
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(392, -463)
 scale = Vector2(0.186035, 0.156738)
@@ -80,3 +84,7 @@ sceneName = "WinScreen"
 position = Vector2(64, -432)
 script = ExtResource("5_gxr1q")
 obstacle = ExtResource("6_54og0")
+
+[node name="LifeCounter" type="CanvasLayer" parent="."]
+
+[node name="LifeCounter" parent="LifeCounter" instance=ExtResource("7_vuvba")]

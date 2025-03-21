@@ -1,4 +1,4 @@
-# Tutorial 3
+# Tutorial 4
 ## Alden Luthfi (2206028932)
 ### Tata Cara Membuat Level Baru
 
@@ -25,3 +25,7 @@ Setelah area reset ditambahkan, langkah selanjutnya adalah menambahkan enemy seb
 
 6. Polishing
 Salah satu polishing yang dilakukan adalah untuk menambahkan hotkey untuk mereset level
+
+# Tutorial 6
+
+
