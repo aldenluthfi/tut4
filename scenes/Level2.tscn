@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=4 uid="uid://d15fvku0xbqds"]
+[gd_scene load_steps=12 format=4 uid="uid://d15fvku0xbqds"]
 
 [ext_resource type="PackedScene" uid="uid://bc2fujtl13g10" path="res://scenes/Player.tscn" id="1_7e1dl"]
+[ext_resource type="Script" path="res://scenes/Level.gd" id="1_8aln5"]
 [ext_resource type="Texture2D" uid="uid://pgvs2eknvuao" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_gr_planet.png" id="2_c350s"]
 [ext_resource type="PackedScene" uid="uid://dqr2f0sfvaott" path="res://scenes/TriggerArea.tscn" id="3_0x7ef"]
 [ext_resource type="PackedScene" uid="uid://c0fofab1dp1ke" path="res://scenes/SceneSwitcher.tscn" id="4_cl6ro"]
@@ -55,6 +56,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_obbfj")
 
 [node name="Level2" type="Node2D"]
+script = ExtResource("1_8aln5")
 
 [node name="Player" parent="." instance=ExtResource("1_7e1dl")]
 jump_speed = -600
