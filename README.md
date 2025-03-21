@@ -28,4 +28,18 @@ Salah satu polishing yang dilakukan adalah untuk menambahkan hotkey untuk merese
 
 # Tutorial 6
 
+1. Tombol kembali ke menu utama
 
+> Pada layar Game Over, kita tinggal menambahkan link button yang mengarah kepada main menu dengan meng-attach script
+
+2. Layar Select Stage
+
+> Untuk mengimplementasikan fitur ini, kita hanya perlu pintar-pintar memainkan vbox dan hbox, Kemudian didalam container tersebut, kita
+
+3. Membuat transisi antar scene
+
+> Untuk membuat transisi antar scene kita hanya perlu menambahkan scene baru dengan node Animated Sprite, kemudian kita bisa mengatur animasi yang diinginkan. Setelah itu, kita bisa menambahkan script untuk memutar animasi fade in ketika level dimulai dan fade out ketika level selesai.
+
+4. Polishing
+
+> Salah satu polishing yang dilakukan adalah membuat pause menu yang dapat diakses dengan menekan tombol escape pada keyboard.
