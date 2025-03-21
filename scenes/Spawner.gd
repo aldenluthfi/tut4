@@ -15,6 +15,7 @@ func spawn():
 	spawned.global_position = spawn_pos
 
 func repeat():
-	spawn()
-	await get_tree().create_timer(1).timeout
-	repeat()
+	if not get_tree().paused:
+		spawn()
+		await get_tree().create_timer(1).timeout
+		repeat()

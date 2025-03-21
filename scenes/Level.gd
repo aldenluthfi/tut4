@@ -10,4 +10,3 @@ func _process(delta: float) -> void:
 	if Input.is_key_pressed(KEY_ESCAPE):
 		Global.current_scene = self.name
 		get_tree().paused = true
-		get_tree().change_scene_to_file(str("res://scenes/Pause.tscn"))
